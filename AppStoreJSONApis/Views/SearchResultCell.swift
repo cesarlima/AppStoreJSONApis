@@ -10,12 +10,32 @@ import UIKit
 
 class SearchResultCell: UICollectionViewCell {
     
-    let imageView:UIImageView = {
+    var appResult: Result! {
+        didSet {
+            nameLabel.text = appResult.trackName
+            categoryLabel.text = appResult.primaryGenreName
+            ratingsLabel.text = "Rating: \(appResult.averageUserRating ?? 0)"
+            let icoUrl = URL(string: appResult.artworkUrl100)
+            appIconImageView.sd_setImage(with: icoUrl)
+            
+            screenshot1ImageView.sd_setImage(with: URL(string: appResult.screenshotUrls[0]))
+            
+            if appResult.screenshotUrls.count > 1 {
+                screenshot2ImageView.sd_setImage(with: URL(string: appResult.screenshotUrls[1]))
+            }
+            
+            if appResult.screenshotUrls.count > 2 {
+                screenshot3ImageView.sd_setImage(with: URL(string: appResult.screenshotUrls[2]))
+            }
+        }
+    }
+    
+    let appIconImageView:UIImageView = {
         let iv = UIImageView()
-        iv.backgroundColor = .red
         iv.widthAnchor.constraint(equalToConstant: 64).isActive = true
         iv.heightAnchor.constraint(equalToConstant: 64).isActive = true
         iv.layer.cornerRadius = 12
+        iv.clipsToBounds = true
         return iv
     }()
     
@@ -56,18 +76,20 @@ class SearchResultCell: UICollectionViewCell {
     
     func createScreenshotImageView() -> UIImageView {
         let imv = UIImageView()
-        imv.backgroundColor = .blue
+        imv.layer.cornerRadius = 8
+        imv.clipsToBounds = true
+        imv.layer.borderWidth = 0.5
+        imv.layer.borderColor = UIColor(white: 0.5, alpha: 0.5).cgColor
+        imv.contentMode = .scaleAspectFill
         return imv
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .yellow
-        
         let labelsStackView = VerticalStackView(arrangedSubviews: [nameLabel, categoryLabel, ratingsLabel])
         
-        let infoTopStackView = UIStackView(arrangedSubviews: [imageView, labelsStackView, getButton])
+        let infoTopStackView = UIStackView(arrangedSubviews: [appIconImageView, labelsStackView, getButton])
         infoTopStackView.spacing = 12
         infoTopStackView.alignment = .center
         
