@@ -11,7 +11,7 @@ import UIKit
 class AppsHorizontalController: BaseCollectionViewController {
     private let cellId = "cellId"
     let topBottomPaddin:CGFloat = 16
-    let lineSpacing:CGFloat = 10
+    let lineSpacing:CGFloat = 14
     
     override func viewDidLoad() {
         super.viewDidLoad()
