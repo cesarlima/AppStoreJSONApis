@@ -28,7 +28,6 @@ class AppsHeaderCell: UICollectionViewCell {
     
     let imageView:UIImageView = {
         let imv = UIImageView(cornerRadius: 8)
-        imv.backgroundColor = .red
         return imv
     }()
     

@@ -10,8 +10,9 @@ import UIKit
 
 class AppsHorizontalController: BaseCollectionViewController {
     private let cellId = "cellId"
-    let topBottomPaddin:CGFloat = 16
-    let lineSpacing:CGFloat = 14
+    let topBottomPaddin:CGFloat = 12
+    let lineSpacing:CGFloat = 12
+    var appsGroup:AppGroup?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,15 +24,19 @@ class AppsHorizontalController: BaseCollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return self.appsGroup?.feed.results.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AppRowCell
+        
+        let app = appsGroup?.feed.results[indexPath.item]
+        cell.companyLabel.text = app?.artistName
+        cell.nameLabel.text = app?.name
+        cell.imageView.sd_setImage(with: URL(string: app?.artworkUrl100 ?? ""))
         return cell
     }
 }
-
 
 extension AppsHorizontalController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
