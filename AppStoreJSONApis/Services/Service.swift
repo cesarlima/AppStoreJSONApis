@@ -33,9 +33,8 @@ class Service {
         fetchGenericJSONData(urlString: "https://rss.itunes.apple.com/api/v1/us/ios-apps/new-apps-we-love/all/50/explicit.json", onComplete: onComplete)
     }
     
-    private func fetchGenericJSONData<T: Decodable>(urlString:String, onComplete:@escaping (T?, Error?) -> Void) {
+    public func fetchGenericJSONData<T: Decodable>(urlString:String, onComplete:@escaping (T?, Error?) -> Void) {
         guard let url = URL(string: urlString) else { return }
-        print("T is Type:", T.self)
         URLSession.shared.dataTask(with: url) { (data, resp, err) in
             if let err = err {
                 onComplete(nil, err)

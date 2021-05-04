@@ -13,6 +13,7 @@ class AppsHorizontalController: HorizontalSnappingController {
     let topBottomPaddin:CGFloat = 12
     let lineSpacing:CGFloat = 12
     var appsGroup:AppGroup?
+    var didSelectHandler: ((FeedResult) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,12 @@ class AppsHorizontalController: HorizontalSnappingController {
         cell.nameLabel.text = app?.name
         cell.imageView.sd_setImage(with: URL(string: app?.artworkUrl100 ?? ""))
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let app = appsGroup?.feed.results[indexPath.item] {
+            self.didSelectHandler?(app)
+        }
     }
 }
 

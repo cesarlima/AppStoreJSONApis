@@ -26,11 +26,8 @@ class AppsPageController: BaseCollectionViewController {
         super.viewDidLoad()
         
         collectionView.backgroundColor = .white
-        
         collectionView.register(AppsGroupCell.self, forCellWithReuseIdentifier: self.groupCellId)
-        
         collectionView.register(AppsPageHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: self.headerId)
-        
         view.addSubview(activityIndicatorView)
         activityIndicatorView.fillSuperview()
         
@@ -88,8 +85,6 @@ class AppsPageController: BaseCollectionViewController {
         
         
         dispatchGroup.notify(queue: .main) {
-            print("completed your dispatch group tasks...")
-            
             self.collectionView.reloadData()
             self.activityIndicatorView.stopAnimating()
         }
@@ -118,6 +113,12 @@ class AppsPageController: BaseCollectionViewController {
         cell.titleLabel.text = app.feed.title
         cell.horizontalController.appsGroup = app
         cell.horizontalController.collectionView.reloadData()
+        cell.horizontalController.didSelectHandler = { [weak self] feedResult in
+            let detailController = AppDetailController()
+            detailController.navigationItem.title = feedResult.name
+            detailController.appId = feedResult.id
+            self?.navigationController?.pushViewController(detailController, animated: true)
+        }
         return cell
     }
 }
