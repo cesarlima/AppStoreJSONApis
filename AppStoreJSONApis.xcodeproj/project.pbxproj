@@ -13,6 +13,8 @@
 		8E366A38263A1F190009A0C6 /* BetterSnappingCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E366A37263A1F190009A0C6 /* BetterSnappingCollectionViewLayout.swift */; };
 		8E366A3D263A2D590009A0C6 /* AppDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E366A3C263A2D590009A0C6 /* AppDetailController.swift */; };
 		8E366A43263ACBE10009A0C6 /* AppDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E366A42263ACBE10009A0C6 /* AppDetailCell.swift */; };
+		8E366A472640E09E0009A0C6 /* PreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E366A462640E09E0009A0C6 /* PreviewCell.swift */; };
+		8E366A4A26421AD20009A0C6 /* PreviewScreenshotsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E366A4926421AD20009A0C6 /* PreviewScreenshotsController.swift */; };
 		8E586F2A2321D6A5007BFD3A /* HorizontalSnappingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E586F292321D6A5007BFD3A /* HorizontalSnappingController.swift */; };
 		8E8D9A2522FDE6D1000571DF /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D9A2422FDE6D1000571DF /* SearchResult.swift */; };
 		8E8D9A2822FDF0AC000571DF /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D9A2722FDF0AC000571DF /* Service.swift */; };
@@ -45,6 +47,8 @@
 		8E366A37263A1F190009A0C6 /* BetterSnappingCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterSnappingCollectionViewLayout.swift; sourceTree = "<group>"; };
 		8E366A3C263A2D590009A0C6 /* AppDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailController.swift; sourceTree = "<group>"; };
 		8E366A42263ACBE10009A0C6 /* AppDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailCell.swift; sourceTree = "<group>"; };
+		8E366A462640E09E0009A0C6 /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCell.swift; sourceTree = "<group>"; };
+		8E366A4926421AD20009A0C6 /* PreviewScreenshotsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewScreenshotsController.swift; sourceTree = "<group>"; };
 		8E586F292321D6A5007BFD3A /* HorizontalSnappingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSnappingController.swift; sourceTree = "<group>"; };
 		8E8D9A2422FDE6D1000571DF /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		8E8D9A2722FDF0AC000571DF /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				8E366A3C263A2D590009A0C6 /* AppDetailController.swift */,
+				8E366A4926421AD20009A0C6 /* PreviewScreenshotsController.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -96,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				8E366A42263ACBE10009A0C6 /* AppDetailCell.swift */,
+				8E366A462640E09E0009A0C6 /* PreviewCell.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -357,6 +363,7 @@
 				8E8F3E4822F4BBF100FFB94E /* AppDelegate.swift in Sources */,
 				8EA1677D230F5DCE00AB650B /* AppGroup.swift in Sources */,
 				8E8D9A2522FDE6D1000571DF /* SearchResult.swift in Sources */,
+				8E366A4A26421AD20009A0C6 /* PreviewScreenshotsController.swift in Sources */,
 				8EA1677B230E082000AB650B /* AppsHeaderCell.swift in Sources */,
 				8EE0CDB62308829A0039AF23 /* AppsPageController.swift in Sources */,
 				8E366A43263ACBE10009A0C6 /* AppDetailCell.swift in Sources */,
@@ -365,6 +372,7 @@
 				8E8D9A2822FDF0AC000571DF /* Service.swift in Sources */,
 				8EE0CDBC230888F90039AF23 /* AppsGroupCell.swift in Sources */,
 				8EA16777230E01E900AB650B /* AppsPageHeader.swift in Sources */,
+				8E366A472640E09E0009A0C6 /* PreviewCell.swift in Sources */,
 				8E8F3E5D22F4E0CE00FFB94E /* AppsSearchController.swift in Sources */,
 				8EE0CDB8230883980039AF23 /* BaseCollectionViewController.swift in Sources */,
 				8E8F3E6022F4E72D00FFB94E /* SearchResultCell.swift in Sources */,
