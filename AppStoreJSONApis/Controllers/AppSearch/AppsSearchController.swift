@@ -78,6 +78,12 @@ class AppsSearchController: BaseCollectionViewController, UISearchBarDelegate {
 //        }
 //    }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let appId = String(self.appResults[indexPath.item].trackId)
+        let appDetailController = AppDetailController(appId: appId)
+        self.navigationController?.pushViewController(appDetailController, animated: true)
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.appResults.count
     }
