@@ -43,7 +43,7 @@ class AppsPageController: BaseCollectionViewController {
             if let err = error {
                 print("Failed to fetch games:", err)
             }
-            
+
             if let group = appGroup {
                 self.groups.append(group)
             }
