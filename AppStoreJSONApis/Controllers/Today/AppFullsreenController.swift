@@ -10,9 +10,12 @@ import UIKit
 
 class AppFullsreenController: UITableViewController {
     var dismissHandler: (() -> Void)?
+    var todayItem: TodayItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.allowsSelection = false
+        tableView.contentInsetAdjustmentBehavior = .never
         tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
         tableView.reloadData()
@@ -26,6 +29,7 @@ class AppFullsreenController: UITableViewController {
         if indexPath.item == 0 {
             let cell = AppFullscreenHeaderCell()
             cell.dismissHandler = self.dismissHandler
+            cell.todayCell.todayItem = todayItem
             return cell
         }
         
@@ -35,7 +39,7 @@ class AppFullsreenController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.item == 0 {
-            return 330
+            return 494
         }
         
         return super.tableView(tableView, heightForRowAt: indexPath)
